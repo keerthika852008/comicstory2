@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ComicCraft - AI Comic Creator</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+</head>
+
+<body>
+
+<main class="container">
+
+    <section class="hero">
+
+        <span class="badge">
+            ✨ AI COMIC CREATOR
+        </span>
+
+        <h1>
+            Turn Your Idea Into a Comic
+        </h1>
+
+        <p>
+            Create a five-panel AI comic with
+            characters, narration, dialogue,
+            illustrations and PDF export.
+        </p>
+
+    </section>
+
+
+    {% if error %}
+
+    <div class="alert">
+
+        <strong>Error:</strong>
+
+        {{ error }}
+
+    </div>
+
+    {% endif %}
+
+
+    <form
+        class="card form-card"
+        action="/generate"
+        method="post"
+    >
+
+        <label for="story_prompt">
+            Story Prompt
+        </label>
+
+        <textarea
+            id="story_prompt"
+            name="story_prompt"
+            maxlength="2000"
+            required
+            placeholder="A brave fox exploring an enchanted forest..."
+        ></textarea>
+
+
+        <div class="grid">
+
+
+            <div>
+
+                <label for="character_name">
+                    Main Character Name
+                </label>
+
+                <input
+                    id="character_name"
+                    name="character_name"
+                    type="text"
+                    required
+                    placeholder="Lumi"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label for="setting">
+                    Setting
+                </label>
+
+                <select
+                    id="setting"
+                    name="setting"
+                >
+
+                    <option>
+                        Enchanted Forest
+                    </option>
+
+                    <option>
+                        School
+                    </option>
+
+                    <option>
+                        Future City
+                    </option>
+
+                    <option>
+                        Outer Space
+                    </option>
+
+                    <option>
+                        Small Village
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label for="tone">
+                    Story Tone
+                </label>
+
+                <select
+                    id="tone"
+                    name="tone"
+                >
+
+                    <option>
+                        Light-hearted
+                    </option>
+
+                    <option>
+                        Dramatic
+                    </option>
+
+                    <option>
+                        Poetic
+                    </option>
+
+                    <option>
+                        Funny
+                    </option>
+
+                    <option>
+                        Adventurous
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label for="art_style">
+                    Art Style
+                </label>
+
+                <select
+                    id="art_style"
+                    name="art_style"
+                >
+
+                    <option>
+                        Anime
+                    </option>
+
+                    <option>
+                        Comic Book
+                    </option>
+
+                    <option>
+                        Cartoon
+                    </option>
+
+                    <option>
+                        Pixel Art
+                    </option>
+
+                    <option>
+                        Realistic
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="primary-btn"
+            type="submit"
+        >
+            Create My Comic →
+        </button>
+
+    </form>
+
+</main>
+
+</body>
+
+</html>
